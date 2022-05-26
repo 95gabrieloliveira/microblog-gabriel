@@ -1,7 +1,7 @@
 # Comandos para criação do banco de dados do Microblog
 
 ## 1) Criar banco de dados (ajuste para conter seu nome)
-CREATE DATABASE progweb_microblog_seunome CHARACTER SET "utf8mb4";
+CREATE DATABASE progweb_microblog_gabriel CHARACTER SET "utf8mb4";
 
 ## 2) Criar tabela de usuários
 CREATE TABLE usuarios(
