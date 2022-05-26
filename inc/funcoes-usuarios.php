@@ -44,7 +44,15 @@ function lerUsuarios(mysqli $conexao):array {
 
 
 // Função lerUmUsuario: usada em usuario-atualiza.php
+function lerUmUsuario(mysqli $conexao, int $id):array{
+    $sql = "SELECT id, nome, email, tipo, senha FROM usuarios
+    WHERE id = $id";
+    
+    $resultado = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
 
+    return mysqli_fetch_assoc($resultado);
+
+}
 // fim lerUmUsuario
 
 
@@ -57,6 +65,12 @@ function lerUsuarios(mysqli $conexao):array {
 
 // Função atualizarUsuario: usada em usuario-atualiza.php
 
+function atualizarUsuario(mysqli $conexao, int $id, string $email, string $senha, string $tipo) {
+    $sql = "UPDATE usuarios SET nome = '$nome', email ='$email', senha = '$senha',tipo = '$tipo' WHERE id = $id";
+    
+    mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+            
+}
 // fim atualizarUsuario
 
 
