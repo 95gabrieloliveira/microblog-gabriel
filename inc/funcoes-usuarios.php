@@ -38,6 +38,10 @@ function lerUsuarios(mysqli $conexao):array {
 
 
 // Função excluirUsuario: usada em usuario-exclui.php
+function excluirUsuario(mysqli $conexao, int $id) {
+    $sql = "DELETE FROM usuarios WHERE id = $id";
+    mysqli_query($conexao, $sql) or die (mysqli_error($conexao));
+}
 
 // fim excluirUsuario
 
@@ -87,7 +91,14 @@ function atualizarUsuario(mysqli $conexao, int $id, string $nome, string $email,
 
 
 // Função buscarUsuario: usada em login.php
+function buscarUsuario(mysqli $conexao, string $email):array{
+    $sql = "SELECT id, nome, email, tipo, senha FROM usuarios
+    WHERE email = '$email'";
 
+    $resultado = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+    return mysqli_fetch_assoc($resultado);
+
+}
 // fim buscarUsuario
 
 

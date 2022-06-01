@@ -21,12 +21,13 @@ if (isset($_POST['atualizar'])) {
   precisaremos verificar a senha digitada */ 
   $senha = verificaSenha($_POST['senha'], $usuario['senha']);
 }
-// Teste de Senhas
+/* // Teste de Senhas
   echo  $usuario['senha'];
   echo "<br>";
-  echo $senha;
+  echo $senha; */
 
-
+atualizarUsuario($conexao, $id, $nome, $email, $senha, $tipo);
+header("location:usuarios.php");
 }
 
 ?>
