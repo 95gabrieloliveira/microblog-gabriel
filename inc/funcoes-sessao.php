@@ -37,3 +37,12 @@ session_destroy();
 header("location:../login.php?logout");
 die();
 }
+
+function verificaAcessoAdmin () {
+    /* SE o usuário não for admin */
+    if($_SESSION['tipo'] !='admin'){
+    /* Redirecione para a página nao-autorizado */
+    header("location:nao-autorizado.php");
+    die(); //ou exit
+    }
+}

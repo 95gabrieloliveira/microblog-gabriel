@@ -2,6 +2,7 @@
 require "../inc/funcoes-usuarios.php";
 require "../inc/cabecalho-admin.php"; 
 
+verificaAcessoAdmin();
 
 if (isset($_POST['inserir'])) {
 	$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
