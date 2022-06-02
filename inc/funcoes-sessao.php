@@ -34,6 +34,6 @@ function login (int $id, string $nome,string $email,string $tipo) {
 function logout () {
 session_start();
 session_destroy();
-header("location:../login.php");
+header("location:../login.php?logout");
 die();
 }
