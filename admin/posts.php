@@ -16,7 +16,7 @@ $quantidade = count($posts);
     
 <div class="row">
   <article class="col-12 bg-white rounded shadow my-1 py-4">
-    <h2 class="text-center">Posts <span class="badge badge-primary">X</span></h2>
+    <h2 class="text-center">Posts <span class="badge badge-primary"><?=$quantidade?></span></h2>
     <p class="lead text-right">
       <a class="btn btn-primary" href="post-insere.php">Inserir novo post</a>
     </p>
@@ -41,7 +41,7 @@ $quantidade = count($posts);
         
           <tr>
             <td>  <?=$post['titulo']?> </td>
-            <td> <?=$post['data']?> </td>
+            <td> <?=formataData($post['data'])?> </td>
 
             <?php if($tipoUsuarioLogado == 'admin'){ ?>
             <td> <?=$post['autor']?> </td>
@@ -55,7 +55,7 @@ $quantidade = count($posts);
             </td>
             <td class="text-center">
               <a class="btn btn-danger btn-sm excluir"
-              href="post-exclui.php">
+              href="post-exclui.php?id=<?=$post['id']?>">
                   Excluir
               </a>
             </td>
